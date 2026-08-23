@@ -989,6 +989,27 @@
 </head>
 
 <body>
+  <audio id="portfolioAudio">
+  <source src="portfolio-audio.mp3" type="audio/mpeg">
+</audio>
+
+<div id="audioPermission" style="position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(8,5,13,.96);font-family:'Sora',sans-serif;">
+  <div style="text-align:center;">
+    <div style="color:#f4f1f9;font-size:18px;font-weight:600;margin-bottom:20px;">
+      Play audio?
+    </div>
+
+    <div style="display:flex;gap:12px;justify-content:center;">
+      <button id="playAudio" type="button" style="border:1px solid rgba(197,157,255,.3);background:#8a2be2;color:#fff;padding:12px 24px;border-radius:999px;font:600 12px 'Sora',sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;">
+        Yes
+      </button>
+
+      <button id="noAudio" type="button" style="border:1px solid rgba(197,157,255,.3);background:transparent;color:#f4f1f9;padding:12px 24px;border-radius:999px;font:600 12px 'Sora',sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;">
+        No
+      </button>
+    </div>
+  </div>
+</div>
 
 <header>
 
@@ -1358,6 +1379,31 @@
       });
     })();
   </script>
+  <script>
+(() => {
+  const audio = document.getElementById('portfolioAudio');
+  const permission = document.getElementById('audioPermission');
+  const yes = document.getElementById('playAudio');
+  const no = document.getElementById('noAudio');
+
+  yes.addEventListener('click', () => {
+    audio.loop = false;
+    audio.volume = 1;
+    audio.currentTime = 0;
+
+    audio.play().then(() => {
+      permission.remove();
+    }).catch(() => {
+      alert('Audio could not be played. Make sure portfolio-audio.mp3 is in the same folder as index.html.');
+    });
+  });
+
+  no.addEventListener('click', () => {
+    audio.pause();
+    permission.remove();
+  });
+})();
+</script>
 
 </body>
 

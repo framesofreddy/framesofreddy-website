@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Book Your Shoot — Frames of Reddy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    :root{
+      --bg:#08050d;
+      --card:#0d0913;
+      --card2:#120c1b;
+
+      --white:#f8f5fb;
+
+      --muted:#9b91a8;
+
+      --line:rgba(255,255,255,.12);
+
+      --violet:#8a2be2;
+      --violet-bright:#b357ff;
+
+      --lilac:#d7b5ff;
+    }
+
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+
+    body{
+      min-height:100vh;
+
+      background:
+        radial-gradient(
+          ellipse at 50% -10%,
+          rgba(138,43,226,.18),
+          transparent 50%
+        ),
+        var(--bg);
+
+      color:var(--white);
+
+      font-family:'Sora',sans-serif;
+
+      -webkit-font-smoothing:antialiased;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    header{
+      height:78px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      padding:0 6vw;
+
+      border-bottom:1px solid var(--line);
+
+      background:rgba(8,5,13,.82);
+
+      backdrop-filter:blur(18px);
+
+      position:sticky;
+      top:0;
+      z-index:20;
+    }
+
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+
+      text-decoration:none;
+
+      color:var(--white);
+
+      font-weight:700;
+      letter-spacing:.04em;
+    }
+
+
+    .brand-mark{
+      font-family:'Anton',sans-serif;
+
+      font-size:28px;
+
+      color:var(--violet-bright);
+    }
+
+
+    .brand-name{
+      font-size:15px;
+      letter-spacing:.05em;
+    }
+
+
+    .back{
+      color:var(--muted);
+
+      text-decoration:none;
+
+      font-size:12px;
+
+      transition:.25s ease;
+    }
+
+
+    .back:hover{
+      color:var(--white);
+    }
+
+
+    /* ---------- MAIN ---------- */
+
+    main{
+      width:min(900px,92%);
+
+      margin:0 auto;
+
+      padding:70px 0 100px;
+    }
+
+
+    .booking-heading{
+      text-align:center;
+
+      margin-bottom:48px;
+    }
+
+
+    .eyebrow{
+      display:block;
+
+      margin-bottom:14px;
+
+      color:var(--violet-bright);
+
+      font-size:10px;
+      font-weight:700;
+
+      letter-spacing:.28em;
+
+      text-transform:uppercase;
+    }
+
+
+    h1{
+      font-family:'Anton',sans-serif;
+
+      font-size:clamp(46px,7vw,72px);
+
+      line-height:.95;
+
+      letter-spacing:.01em;
+
+      text-transform:uppercase;
+    }
+
+
+    h1 em{
+      color:var(--violet-bright);
+
+      font-style:normal;
+    }
+
+
+    .booking-sub{
+      max-width:580px;
+
+      margin:20px auto 0;
+
+      color:var(--muted);
+
+      font-size:13px;
+
+      line-height:1.7;
+    }
+
+
+    /* ---------- FORM CARD ---------- */
+
+    .booking-card{
+
+      width:min(620px,100%);
+
+      margin:0 auto;
+
+      padding:38px;
+
+      border:1px solid var(--line);
+
+      border-radius:24px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(179,87,255,.07),
+          rgba(8,5,13,.95) 60%
+        );
+
+      box-shadow:
+        0 30px 100px rgba(0,0,0,.4);
+    }
+
+
+    /* ---------- FORM ---------- */
+
+    .form-group{
+      margin-bottom:22px;
+    }
+
+
+    .form-label{
+      display:block;
+
+      margin-bottom:8px;
+
+      color:#c7bdcf;
+
+      font-size:10px;
+
+      font-weight:700;
+
+      letter-spacing:.12em;
+
+      text-transform:uppercase;
+    }
+
+
+    .required{
+      color:var(--violet-bright);
+    }
+
+
+    input,
+    select,
+    textarea{
+
+      width:100%;
+
+      border:1px solid rgba(255,255,255,.12);
+
+      border-radius:10px;
+
+      outline:none;
+
+      background:#151119;
+
+      color:var(--white);
+
+      font-family:'Sora',sans-serif;
+
+      font-size:13px;
+
+      transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+
+    input,
+    select{
+      height:50px;
+
+      padding:0 15px;
+    }
+
+
+    textarea{
+      min-height:120px;
+
+      padding:15px;
+
+      resize:vertical;
+    }
+
+
+    input::placeholder,
+    textarea::placeholder{
+      color:#655d6d;
+    }
+
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      border-color:var(--violet-bright);
+
+      box-shadow:
+        0 0 0 3px rgba(179,87,255,.08);
+    }
+
+
+    select{
+      appearance:none;
+
+      cursor:pointer;
+
+      background-image:
+        linear-gradient(45deg,transparent 50%,#aaa 50%),
+        linear-gradient(135deg,#aaa 50%,transparent 50%);
+
+      background-position:
+        calc(100% - 18px) 21px,
+        calc(100% - 13px) 21px;
+
+      background-size:
+        5px 5px,
+        5px 5px;
+
+      background-repeat:no-repeat;
+    }
+
+
+    /* ---------- PHONE ---------- */
+
+    .phone-row{
+      display:grid;
+
+      grid-template-columns:95px 1fr;
+
+      gap:10px;
+    }
+
+
+    .country-code{
+      display:flex;
+
+      align-items:center;
+      justify-content:center;
+
+      border:1px solid rgba(255,255,255,.12);
+
+      border-radius:10px;
+
+      background:#151119;
+
+      color:var(--white);
+
+      font-size:13px;
+    }
+
+
+    /* ---------- TWO COLUMNS ---------- */
+
+    .two-col{
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      gap:16px;
+    }
+
+
+    /* ---------- PACKAGE SUMMARY ---------- */
+
+    .package-summary{
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:space-between;
+
+      gap:20px;
+
+      padding:18px;
+
+      margin-bottom:28px;
+
+      border:1px solid rgba(179,87,255,.28);
+
+      border-radius:14px;
+
+      background:rgba(179,87,255,.06);
+    }
+
+
+    .package-summary-label{
+
+      color:var(--muted);
+
+      font-size:10px;
+
+      text-transform:uppercase;
+
+      letter-spacing:.15em;
+    }
+
+
+    .package-summary-name{
+
+      margin-top:5px;
+
+      font-family:'Anton',sans-serif;
+
+      font-size:25px;
+
+      text-transform:uppercase;
+    }
+
+
+    .package-summary-price{
+
+      color:var(--violet-bright);
+
+      font-family:'Anton',sans-serif;
+
+      font-size:27px;
+
+      white-space:nowrap;
+    }
+
+
+    /* ---------- BUTTON ---------- */
+
+    .submit-button{
+
+      width:100%;
+
+      height:56px;
+
+      border:0;
+
+      border-radius:999px;
+
+      background:var(--violet-bright);
+
+      color:#fff;
+
+      font-family:'Sora',sans-serif;
+
+      font-size:13px;
+
+      font-weight:700;
+
+      cursor:pointer;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+    }
+
+
+    .submit-button:hover{
+
+      transform:translateY(-2px);
+
+      background:#c477ff;
+
+      box-shadow:
+        0 10px 35px rgba(179,87,255,.28);
+    }
+
+
+    .form-note{
+
+      margin-top:18px;
+
+      text-align:center;
+
+      color:#6e6577;
+
+      font-size:10px;
+
+      line-height:1.6;
+    }
+
+
+    /* ---------- SUCCESS ---------- */
+
+    .success{
+
+      display:none;
+
+      text-align:center;
+
+      padding:30px 10px 10px;
+    }
+
+
+    .success-icon{
+
+      width:60px;
+      height:60px;
+
+      margin:0 auto 20px;
+
+      display:flex;
+
+      align-items:center;
+      justify-content:center;
+
+      border-radius:50%;
+
+      background:rgba(179,87,255,.12);
+
+      border:1px solid var(--violet-bright);
+
+      color:var(--violet-bright);
+
+      font-size:24px;
+    }
+
+
+    .success h2{
+
+      font-family:'Anton',sans-serif;
+
+      font-size:36px;
+
+      text-transform:uppercase;
+    }
+
+
+    .success p{
+
+      max-width:430px;
+
+      margin:12px auto 0;
+
+      color:var(--muted);
+
+      font-size:13px;
+
+      line-height:1.7;
+    }
+
+
+    /* ---------- MOBILE ---------- */
+
+    @media(max-width:650px){
+
+      header{
+        padding:0 5%;
+      }
+
+
+      main{
+        padding:50px 0 70px;
+      }
+
+
+      .booking-card{
+        padding:25px 20px;
+      }
+
+
+      .two-col{
+        grid-template-columns:1fr;
+
+        gap:0;
+      }
+
+
+      .phone-row{
+        grid-template-columns:82px 1fr;
+      }
+
+
+      .package-summary{
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        gap:8px;
+      }
+
+
+      .package-summary-price{
+        font-size:25px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header>
+
+    <a href="index.html" class="brand">
+
+      <span class="brand-mark">R</span>
+
+      <span class="brand-name">
+        FRAMES OF REDDY
+      </span>
+
+    </a>
+
+
+    <a href="index.html#packages" class="back">
+      ← Back to Packages
+    </a>
+
+  </header>
+
+
+
+  <!-- MAIN -->
+
+  <main>
+
+
+    <div class="booking-heading">
+
+      <span class="eyebrow">
+        Book Your Shoot
+      </span>
+
+      <h1>
+        Lock in your <em>frame.</em>
+      </h1>
+
+      <p class="booking-sub">
+        Share your details and tell me about your shoot.
+        I'll get back to you and confirm the session.
+      </p>
+
+    </div>
+
+
+
+    <div class="booking-card">
+
+
+      <!-- PACKAGE -->
+
+      <div class="package-summary">
+
+        <div>
+
+          <div class="package-summary-label">
+            Selected Package
+          </div>
+
+          <div
+            class="package-summary-name"
+            id="packageName"
+          >
+            Quick Shoot
+          </div>
+
+        </div>
+
+
+        <div
+          class="package-summary-price"
+          id="packagePrice"
+        >
+          ₹1,499
+        </div>
+
+      </div>
+
+
+
+      <!-- FORM -->
+
+      <form id="bookingForm">
+
+
+        <!-- FULL NAME -->
+
+        <div class="form-group">
+
+          <label class="form-label">
+            Full Name <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your full name"
+            required
+          >
+
+        </div>
+
+
+
+        <!-- PHONE -->
+
+        <div class="form-group">
+
+          <label class="form-label">
+            Contact Number <span class="required">*</span>
+          </label>
+
+
+          <div class="phone-row">
+
+            <div class="country-code">
+              🇮🇳 &nbsp; +91
+            </div>
+
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Enter phone number"
+              pattern="[0-9]{10}"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+          <label class="form-label">
+            Email Address <span class="required">*</span>
+          </label>
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email address"
+            required
+          >
+
+        </div>
+
+
+
+        <!-- PACKAGE TYPE -->
+
+        <div class="form-group">
+
+          <label class="form-label">
+            Package Type <span class="required">*</span>
+          </label>
+
+          <select
+            name="package"
+            id="packageSelect"
+            required
+          >
+
+            <option value="quick">
+              Quick Shoot — ₹1,499
+            </option>
+
+            <option value="halfday">
+              Half Day — ₹4,499
+            </option>
+
+          </select>
+
+        </div>
+
+
+
+        <!-- EVENT DETAILS -->
+
+        <div class="form-group">
+
+          <label class="form-label">
+            Event Details <span class="required">*</span>
+          </label>
+
+          <textarea
+            name="details"
+            placeholder="Tell me about your shoot, event, reel idea, or brand..."
+            required
+          ></textarea>
+
+        </div>
+
+
+
+        <!-- LOCATION -->
+
+        <div class="form-group">
+
+          <label class="form-label">
+            Location / Venue <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            name="location"
+            placeholder="e.g. Banjara Hills, Hyderabad"
+            required
+          >
+
+        </div>
+
+
+
+        <!-- DATE + TIME -->
+
+        <div class="two-col">
+
+
+          <div class="form-group">
+
+            <label class="form-label">
+              Date of Event <span class="required">*</span>
+            </label>
+
+            <input
+              type="date"
+              name="date"
+              id="eventDate"
+              required
+            >
+
+          </div>
+
+
+
+          <div class="form-group">
+
+            <label class="form-label">
+              Preferred Time to Call
+            </label>
+
+            <select name="callTime">
+
+              <option value="">
+                Select preferred time
+              </option>
+
+              <option>
+                9 AM – 12 PM
+              </option>
+
+              <option>
+                12 PM – 3 PM
+              </option>
+
+              <option>
+                3 PM – 6 PM
+              </option>
+
+              <option>
+                6 PM – 9 PM
+              </option>
+
+            </select>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- SUBMIT -->
+
+        <button
+          type="submit"
+          class="submit-button"
+        >
+          Send Booking Request&nbsp; ↗
+        </button>
+
+
+        <p class="form-note">
+          Distance charges may apply for locations more than
+          20 km away.
+        </p>
+
+
+      </form>
+
+
+
+      <!-- SUCCESS -->
+
+      <div class="success" id="successMessage">
+
+        <div class="success-icon">
+          ✓
+        </div>
+
+        <h2>
+          Request Received
+        </h2>
+
+        <p>
+          Thank you for reaching out.
+          I'll review your shoot details and get back
+          to you shortly to confirm the session.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+
+
+  <script>
+
+    /* ---------- PACKAGE FROM URL ---------- */
+
+    const params =
+      new URLSearchParams(window.location.search);
+
+    const selectedPackage =
+      params.get('package');
+
+
+    const packageName =
+      document.getElementById('packageName');
+
+    const packagePrice =
+      document.getElementById('packagePrice');
+
+    const packageSelect =
+      document.getElementById('packageSelect');
+
+
+    if(selectedPackage === 'halfday'){
+
+      packageName.textContent =
+        'Half Day';
+
+      packagePrice.textContent =
+        '₹4,499';
+
+      packageSelect.value =
+        'halfday';
+
+    }else{
+
+      packageName.textContent =
+        'Quick Shoot';
+
+      packagePrice.textContent =
+        '₹1,499';
+
+      packageSelect.value =
+        'quick';
+
+    }
+
+
+
+    /* ---------- PACKAGE SELECT CHANGE ---------- */
+
+    packageSelect.addEventListener(
+      'change',
+      function(){
+
+        if(this.value === 'halfday'){
+
+          packageName.textContent =
+            'Half Day';
+
+          packagePrice.textContent =
+            '₹4,499';
+
+        }else{
+
+          packageName.textContent =
+            'Quick Shoot';
+
+          packagePrice.textContent =
+            '₹1,499';
+
+        }
+
+      }
+    );
+
+
+
+    /* ---------- MINIMUM DATE ---------- */
+
+    const eventDate =
+      document.getElementById('eventDate');
+
+    const today =
+      new Date();
+
+    const year =
+      today.getFullYear();
+
+    const month =
+      String(today.getMonth() + 1)
+        .padStart(2,'0');
+
+    const day =
+      String(today.getDate())
+        .padStart(2,'0');
+
+    eventDate.min =
+      `${year}-${month}-${day}`;
+
+
+
+    /* ---------- FORM ---------- */
+
+    const form =
+  document.getElementById('bookingForm');
+
+
+form.addEventListener(
+  'submit',
+  function(event){
+
+    event.preventDefault();
+
+
+    /* Get form values */
+
+    const name =
+      form.elements['name'].value.trim();
+
+    const phone =
+      form.elements['phone'].value.trim();
+
+    const email =
+      form.elements['email'].value.trim();
+
+    const packageType =
+      form.elements['package'].value;
+
+    const details =
+      form.elements['details'].value.trim();
+
+    const location =
+      form.elements['location'].value.trim();
+
+    const date =
+      form.elements['date'].value;
+
+    const callTime =
+      form.elements['callTime'].value;
+
+
+    /* Package details */
+
+    let packageName;
+    let packagePrice;
+
+    if(packageType === 'halfday'){
+
+      packageName = 'Half Day';
+      packagePrice = '₹4,499';
+
+    }else{
+
+      packageName = 'Quick Shoot';
+      packagePrice = '₹1,499';
+
+    }
+
+
+    /* Format date */
+
+    let formattedDate = date;
+
+    if(date){
+
+      const dateObj =
+        new Date(date + 'T00:00:00');
+
+      formattedDate =
+        dateObj.toLocaleDateString(
+          'en-IN',
+          {
+            day:'2-digit',
+            month:'2-digit',
+            year:'numeric'
+          }
+        );
+
+    }
+
+
+    /* WhatsApp message */
+
+    const message =
+`Hello Frames of Reddy!
+
+I'd like to book a shoot.
+
+========================
+BOOKING DETAILS
+========================
+
+Name:
+${name}
+
+Contact Number:
++91 ${phone}
+
+Email:
+${email}
+
+Package:
+${packageName}
+
+Package Price:
+Rs. ${packagePrice.replace('₹', '')}
+
+Event Date:
+${formattedDate}
+
+Preferred Time to Call:
+${callTime || 'Not specified'}
+
+Location / Venue:
+${location}
+
+Event Details:
+${details}
+
+========================
+
+Note:
+Distance charges may apply for locations more than 20 km away.
+
+Looking forward to hearing from you!
+- Frames of Reddy`;
+
+
+    /* Open WhatsApp */
+
+    const whatsappURL =
+  'https://wa.me/919866488377?text=' +
+  encodeURIComponent(message);
+
+window.open(whatsappURL, '_blank');
+
+  }
+);
+  </script>
+
+
+</body>
+
+</html>

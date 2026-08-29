@@ -998,6 +998,379 @@
   height:auto;
   max-height:90vh;
   object-fit:cover;
+
+}
+
+/* ---------- Packages ---------- */
+
+.packages{
+  background:
+    radial-gradient(
+      ellipse at 15% 50%,
+      rgba(138,43,226,0.14),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 85% 50%,
+      rgba(179,87,255,0.10),
+      transparent 45%
+    ),
+    var(--bg);
+
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.packages-head{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto;
+}
+
+.packages-head .eyebrow{
+  margin-bottom:16px;
+}
+
+.packages-head h2{
+  font-size:clamp(48px,7vw,82px);
+}
+
+.packages-head h2 em{
+  color:var(--violet-bright);
+  font-style:normal;
+}
+
+.packages-sub{
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.7;
+  max-width:55ch;
+  margin:22px auto 0;
+}
+
+
+/* Package grid */
+
+.package-grid{
+  width:min(1050px,100%);
+  margin:60px auto 0;
+
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+
+
+/* Individual card */
+
+.package-card{
+  position:relative;
+  min-height:560px;
+
+  padding:38px 34px 30px;
+
+  border:1px solid var(--line);
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(179,87,255,0.08),
+      rgba(8,5,13,0.95) 55%
+    );
+
+  display:flex;
+  flex-direction:column;
+
+  overflow:visible;
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.package-card:hover{
+  transform:translateY(-6px);
+
+  border-color:rgba(179,87,255,.65);
+
+  box-shadow:
+    0 20px 70px rgba(0,0,0,.45),
+    0 0 45px rgba(179,87,255,.15);
+}
+
+
+/* Second / popular card */
+
+.package-card.popular{
+  border-color:var(--violet-bright);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(138,43,226,0.16),
+      rgba(8,5,13,0.96) 60%
+    );
+
+  box-shadow:
+    0 0 45px rgba(138,43,226,.10);
+}
+
+.package-card.popular:hover{
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.5),
+    0 0 55px rgba(179,87,255,.25);
+}
+
+
+/* Popular badge */
+
+.package-badge{
+  position:absolute;
+
+  top:-14px;
+  right:28px;
+
+  padding:8px 18px;
+
+  border-radius:999px;
+
+  background:var(--violet-bright);
+  color:#08050d;
+
+  font-size:10px;
+  font-weight:800;
+
+  letter-spacing:.16em;
+  text-transform:uppercase;
+
+  box-shadow:
+    0 0 25px rgba(179,87,255,.45);
+}
+
+
+/* Small heading */
+
+.package-kicker{
+  color:var(--violet-bright);
+
+  font-size:11px;
+  font-weight:700;
+
+  letter-spacing:.22em;
+  text-transform:uppercase;
+
+  margin-bottom:16px;
+}
+
+
+/* Package title */
+
+.package-card h3{
+  font-size:34px;
+  color:var(--white);
+
+  margin-bottom:16px;
+}
+
+
+/* Description */
+
+.package-description{
+  color:var(--muted);
+
+  font-size:14px;
+  line-height:1.75;
+
+  max-width:48ch;
+
+  min-height:74px;
+}
+
+
+/* Price */
+
+.package-price{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+
+  margin:30px 0 34px;
+}
+
+.package-price .currency{
+  font-size:18px;
+  color:var(--white);
+}
+
+.package-price .amount{
+  font-family:'Anton', sans-serif;
+
+  font-size:52px;
+  line-height:1;
+
+  color:var(--white);
+}
+
+.package-price .extra{
+  color:var(--muted);
+
+  font-size:12px;
+}
+
+
+/* What's included */
+
+.package-included-title{
+  color:var(--violet-bright);
+
+  font-size:10px;
+  font-weight:700;
+
+  letter-spacing:.2em;
+  text-transform:uppercase;
+
+  margin-bottom:18px;
+}
+
+.package-features{
+  list-style:none;
+
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+
+  margin:0;
+  padding:0;
+}
+
+.package-features li{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+
+  color:#d8d2df;
+
+  font-size:14px;
+  line-height:1.45;
+}
+
+.package-features li::before{
+  content:'✓';
+
+  flex:none;
+
+  color:var(--violet-bright);
+
+  font-weight:700;
+}
+
+
+/* CTA */
+
+.package-cta{
+  margin-top:auto;
+  padding-top:34px;
+}
+
+.package-button{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  padding:16px 22px;
+
+  border-radius:999px;
+
+  background:var(--white);
+  color:#08050d;
+
+  font-size:13px;
+  font-weight:700;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+}
+
+.package-button:hover{
+  transform:translateY(-2px);
+
+  background:var(--violet-bright);
+
+  color:#fff;
+
+  box-shadow:
+    0 0 30px rgba(179,87,255,.35);
+}
+
+.package-card.popular .package-button{
+  background:var(--violet-bright);
+  color:#fff;
+}
+
+.package-card.popular .package-button:hover{
+  background:#c477ff;
+
+  box-shadow:
+    0 0 35px rgba(179,87,255,.45);
+}
+/* Distance note */
+
+.package-distance-note{
+  width:100%;
+  margin:28px auto 0;
+
+  text-align:center;
+
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+  letter-spacing:.02em;
+}
+
+.package-distance-note strong{
+  color:var(--lilac);
+  font-weight:600;
+}
+
+
+/* Mobile */
+
+@media (max-width:700px){
+
+  .package-grid{
+    grid-template-columns:1fr;
+    gap:36px;
+    margin-top:48px;
+  }
+
+  
+  .package-card{
+    min-height:auto;
+    padding:32px 24px 26px;
+  }
+
+  .package-description{
+    min-height:auto;
+  }
+
+  .package-price{
+    margin:28px 0 30px;
+  }
+
+  .package-price .amount{
+    font-size:46px;
+  }
+
+  .package-badge{
+    right:20px;
+  }
 }
 </style>
 
@@ -1017,6 +1390,8 @@
     <a href="#services">What I Do</a>
 
     <a href="#work">Work</a>
+
+    <a href="#packages">Packages</a>
 
     <a href="#contact">Contact</a>
 
@@ -1267,6 +1642,157 @@
     </a>
 
   </div>
+
+</section>
+
+<!-- PACKAGES -->
+
+<section class="packages" id="packages">
+
+  <div class="packages-head">
+
+    <span class="eyebrow">Simple. Transparent. Creative.</span>
+
+    <h2>
+      Choose your <em>frame.</em>
+    </h2>
+
+    <p class="packages-sub">
+      Whether it's one reel or a special moment,
+      choose the coverage that fits your story.
+      Shoot. Edit. Deliver.
+    </p>
+
+  </div>
+
+
+  <div class="package-grid">
+
+    <!-- QUICK SHOOT -->
+
+    <div class="package-card popular">
+       
+      <span class="package-badge">
+        Most Popular
+      </span>
+
+      <div class="package-kicker">
+        For a single reel
+      </div>
+
+      <h3>Quick Shoot</h3>
+
+      <p class="package-description">
+        One hour of focused coverage for a polished
+        reel — shot, edited, and delivered with the
+        Frames of Reddy touch.
+      </p>
+
+
+      <div class="package-price">
+        <span class="currency">₹</span>
+        <span class="amount">1,499</span>
+        <span class="extra">· per shoot</span>
+      </div>
+
+
+      <div class="package-included-title">
+        What's included
+      </div>
+
+      <ul class="package-features">
+
+        <li>Up to 1 hour of coverage</li>
+
+        <li>1 edited reel delivered</li>
+
+        <li>Quick on-site reel delivery</li>
+
+        <li>Professional shooting setup</li>
+
+        <li>Shot on the latest iPhone</li>
+
+        <li>Creative direction &amp; editing</li>
+
+      </ul>
+
+
+      <div class="package-cta">
+
+       <a href="booking.html?package=quick" class="package-button">
+  Book this package
+  <span>↗</span>
+</a>
+
+      </div>
+
+    </div>
+
+
+    <!-- HALF DAY -->
+
+    <div class="package-card">
+
+      
+
+      <div class="package-kicker">
+        For special moments
+      </div>
+
+      <h3>Half Day</h3>
+
+      <p class="package-description">
+        Up to three hours of coverage with multiple
+        reels and enough creative room to capture
+        the moments that matter.
+      </p>
+
+
+      <div class="package-price">
+        <span class="currency">₹</span>
+        <span class="amount">4,499</span>
+        <span class="extra">· per shoot</span>
+      </div>
+
+
+      <div class="package-included-title">
+        What's included
+      </div>
+
+      <ul class="package-features">
+
+        <li>Up to 3 hours of coverage</li>
+
+        <li>3 edited reels delivered</li>
+
+        <li>Quick on-site reel delivery</li>
+
+        <li>Professional shooting setup</li>
+
+        <li>Shot on the latest iPhone</li>
+
+        <li>Creative direction &amp; editing</li>
+
+      </ul>
+
+
+      <div class="package-cta">
+
+        <a href="booking.html?package=halfday" class="package-button">
+  Book this package
+  <span>↗</span>
+</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="package-distance-note">
+  <strong>Note:</strong>
+  Distance charges may apply for locations more than 20 km away.
+</div>
 
 </section>
 
